@@ -9,6 +9,7 @@ DWORD CALLBACK DeadSpaceHackThread(HMODULE hModule)
 	MSG Msg = { 0 };
 	BOOL gResult;
 
+	MessageBox(nullptr, L"Injected", L"Status", MB_OK);
 
 	while ((gResult = GetMessage(&Msg, nullptr, 0, 0)) > 0)
 	{
