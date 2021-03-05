@@ -5,6 +5,7 @@
 
 DWORD jmpBackAddy = 0x0045D1DD + 0x8;
 DWORD dwGodmode = 0, dwOneShotKill = 0;
+
 void __declspec(naked) ourFunc()
 {
 	__asm

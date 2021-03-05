@@ -5,16 +5,18 @@
 
 DWORD CALLBACK DeadSpaceHackThread(HMODULE hModule)
 {
+	//Create Window
 	Window wWnd = Window(500, 500, L"Dead Space Trainer Internal");
 	MSG Msg = { 0 };
 	BOOL gResult;
 
-
+	//Get Windows Messages
 	while ((gResult = GetMessage(&Msg, nullptr, 0, 0)) > 0)
 	{
 		TranslateMessage(&Msg);
 		DispatchMessage(&Msg);
 
+		//Send a Windows COMMAND Msg based on Key Input
 		if (GetAsyncKeyState(VK_F1) & 0x0001)
 		{
 			SendMessage(wWnd.GetWindowHandle(), (UINT)WM_COMMAND, (WPARAM)GODMODE_SET, (LPARAM)0);
