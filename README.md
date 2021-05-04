@@ -7,4 +7,4 @@ The code for the hackProcess was taken from GuidedHacking while code for the win
 
 Offsets were found using cheat engine.
 
-![DeadSpaceDLLImage](https://user-images.githubusercontent.com/52585921/117047251-a8867280-acdf-11eb-9996-c2f28795abb0.jpg)
+![DeadSpaceDLLImage](https://user-images.githubusercontent.com/52585921/117048270-cbfded00-ace0-11eb-810f-f67574363109.jpg)
