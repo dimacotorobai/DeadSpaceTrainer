@@ -223,14 +223,12 @@ VOID DeadSpace::RunWindow(HWND hWnd, WPARAM wParam, LPARAM lParam) noexcept
 		bChecked = IsDlgButtonChecked(hWnd, ONESHOT_SET);
 		if (bChecked == BST_UNCHECKED)
 		{
-			SetWindowText(hWnd, L"OneShotKill Checked!");
 			CheckDlgButton(hWnd, ONESHOT_SET, BST_CHECKED);
 			dwOneShotKill = 1;
 		}
 		else if (bChecked == BST_CHECKED)
 		{
 			dwOneShotKill = 0;
-			SetWindowText(hWnd, L"OneShotKill Unchecked!");
 			CheckDlgButton(hWnd, ONESHOT_SET, BST_UNCHECKED);
 		}
 		break;
