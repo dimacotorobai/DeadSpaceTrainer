@@ -192,14 +192,12 @@ VOID DeadSpace::RunWindow(HWND hWnd, WPARAM wParam, LPARAM lParam) noexcept
 		bChecked = IsDlgButtonChecked(hWnd, GODMODE_SET);
 		if (bChecked == BST_UNCHECKED)
 		{
-			SetWindowText(hWnd, L"Godmode Checked!");
 			CheckDlgButton(hWnd, GODMODE_SET, BST_CHECKED);
 			dwGodmode = 1;
 
 		}
 		else if (bChecked == BST_CHECKED)
 		{
-			SetWindowText(hWnd, L"Godmode Unchecked!");
 			CheckDlgButton(hWnd, GODMODE_SET, BST_UNCHECKED);
 			dwGodmode = 0;
 		}
