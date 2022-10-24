@@ -178,7 +178,7 @@ VOID DeadSpace::CreateWindowControls(HWND hWnd) noexcept
 		hWnd, (HMENU)STASIS_SET, GetModuleHandle(L"DeadSpaceCheatDLL.dll"), nullptr);
 
 	//Dynamic Addresses
-	DeadSpaceOffsets::uiModuleBaseAddress = (uintptr_t)GetModuleHandle(L"Dead Space.exe");;
+	DeadSpaceOffsets::uiModuleBaseAddress = (uintptr_t)GetModuleHandle(L"Dead Space.exe");
 
 	return VOID();
 }
