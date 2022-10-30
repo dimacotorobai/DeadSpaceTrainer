@@ -10,13 +10,18 @@
 #define STASIS_SET	106
 
 class DeadSpace
-{public:
+{
+public:
 	HWND tbCredits, tbNodes;
 	HWND ebCredits, ebNodes;
 	HWND bbCredits, bbNodes;
 
 	//Checkboxes
 	HWND cbGodmode, cbOneShotKill, cbAmmo, cbStatis, cbAir;
+
+	//Process Name
+	const TCHAR* szDLLName = TEXT("DeadSpaceCheatDLL.dll");
+
 public:
 	static VOID CreateWindowGUI(HWND hWnd, HDC hdc) noexcept;
 	VOID CreateWindowControls(HWND hWnd) noexcept;
