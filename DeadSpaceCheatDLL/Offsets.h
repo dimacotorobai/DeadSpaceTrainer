@@ -4,20 +4,17 @@ namespace DeadSpaceOffsets
 	//Read/Write Handle to the Game
 	HANDLE hProcess = 0;
 
-
 	//Process Name of Game and Specific Module Name 
-	const wchar_t *szProcessName = L"Dead Space.exe";
-	const wchar_t *szModuleName = L"Dead Space.exe";
-
+	const TCHAR *szProcessName = TEXT("Dead Space.exe");
+	const TCHAR *szModuleName = TEXT("Dead Space.exe");
 
 	//Store ProcessID and ModuleBaseAddress in here
 	DWORD dwProcID;
-	uintptr_t uiModuleBaseAddress;
+	uintptr_t uiModuleBaseAddress = 0x00400000;
 
 	//Strore Dynamic Addresses in Here
-	uintptr_t DynamicNodes, DynamicCredits;
-	uintptr_t DynamicHealth;
-
+	uintptr_t DynamicNodes;
+	uintptr_t DynamicCredits;
 
 	//First Offset is Offset Relative to ModuleBaseAddress
 	std::vector<unsigned int> NodesOffsets = { 0x00B4578C, 0x278, 0x4, 0x0, 0x594 };
@@ -33,13 +30,11 @@ namespace DeadSpaceOffsets
 	BYTE AmmoDecON[] = { 0x90, 0x90, 0x90, 0x90, 0x90, 0x90 };
 	unsigned int AmmoDecSize = 6;
 
-
 	//Health Decrement
 	uintptr_t HealthDecrement = 0x0005D1DD;
 	BYTE HealthDecOFF[] = { 0xF3, 0x0F, 0x11, 0x87, 0x20, 0x01, 0x00, 0x00 };
 	BYTE HealthDecON[] = { 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90 };
 	unsigned int HealthDecSize = 8;
-
 
 	//Air Decrememnt
 	uintptr_t AirDecrement = 0x0013481A;
@@ -47,11 +42,15 @@ namespace DeadSpaceOffsets
 	BYTE AirDecON[] = { 0x90, 0x90, 0x90, 0x90, 0x90 };
 	unsigned int AirDecSize = 5;
 
-
 	//Statis Decrement
 	uintptr_t StatisDecrement = 0x0012735F;
 	BYTE StatisDecOFF[] = { 0xF3, 0x0F, 0x11, 0x86, 0x28, 0x01, 0x00, 0x00 };
 	BYTE StatisDecON[] = { 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90 };
 	unsigned int StatisDecSize = 8;
 
+	//Health Decrement Instruction and Flags
+	DWORD HealthDecrementAddr = 0x0045D1DD;
+	DWORD HeathDecremenntJumpBackAddr = HealthDecrementAddr + 0x8;
+	DWORD dwGodmode = 0;
+	DWORD dwOneShotKill = 0;
 }
