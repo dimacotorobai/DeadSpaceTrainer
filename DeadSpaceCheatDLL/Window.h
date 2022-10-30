@@ -1,6 +1,4 @@
 #pragma once
-
-
 class Window
 {
 private:
@@ -9,6 +7,7 @@ private:
 	public:
 		static const TCHAR *GetName() noexcept;
 		static HINSTANCE GetInstance() noexcept;
+
 	private:
 		WindowClass() noexcept;
 		~WindowClass();
@@ -18,16 +17,19 @@ private:
 		static WindowClass wndClass;
 		HINSTANCE hInstance;
 	};
+
 public:
 	Window(int width, int height, const TCHAR* name) noexcept;
 	~Window();
 	Window(const Window&) = delete;
 	Window& operator=(const Window&) = delete;
 	HWND GetWindowHandle();
+
 private:
 	static LRESULT CALLBACK HandleMsgSetup(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) noexcept;
 	static LRESULT CALLBACK HandleMsgThunk(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) noexcept;
 	LRESULT HandleMsg(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) noexcept;
+
 private:
 	int width;
 	int height;

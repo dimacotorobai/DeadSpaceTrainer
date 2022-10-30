@@ -104,9 +104,7 @@ LRESULT Window::HandleMsg(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) noe
 		{
 			PAINTSTRUCT ps;
 			HDC hdc = BeginPaint(hWnd, &ps);
-
 			deadspace.CreateWindowGUI(hWnd, hdc);
-
 			EndPaint(hWnd, &ps);
 			return 0;
 		}
