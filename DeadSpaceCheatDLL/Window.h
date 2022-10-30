@@ -7,19 +7,19 @@ private:
 	class WindowClass
 	{
 	public:
-		static const wchar_t *GetName() noexcept;
+		static const TCHAR *GetName() noexcept;
 		static HINSTANCE GetInstance() noexcept;
 	private:
 		WindowClass() noexcept;
 		~WindowClass();
 		WindowClass(const WindowClass&) = delete;
 		WindowClass& operator=(const WindowClass&) = delete;
-		static constexpr const wchar_t* wndCLassName = L"Window Class Name";
+		static constexpr const TCHAR* wndCLassName = TEXT("Window Class Name");
 		static WindowClass wndClass;
 		HINSTANCE hInstance;
 	};
 public:
-	Window(int width, int height, const wchar_t* name) noexcept;
+	Window(int width, int height, const TCHAR* name) noexcept;
 	~Window();
 	Window(const Window&) = delete;
 	Window& operator=(const Window&) = delete;

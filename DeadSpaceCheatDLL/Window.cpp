@@ -5,7 +5,7 @@
 DeadSpace deadspace;
 Window::WindowClass Window::WindowClass::wndClass;
 
-const wchar_t * Window::WindowClass::GetName() noexcept
+const TCHAR * Window::WindowClass::GetName() noexcept
 {
 	return wndCLassName;
 }
@@ -15,7 +15,7 @@ HINSTANCE Window::WindowClass::GetInstance() noexcept
 	return wndClass.hInstance;
 }
 
-Window::WindowClass::WindowClass() noexcept : hInstance(GetModuleHandle(L"DeadSpaceCheatDll.dll"))
+Window::WindowClass::WindowClass() noexcept : hInstance(GetModuleHandle(deadspace.szDLLName))
 {
 	WNDCLASSEX wc = { 0 };
 	wc.cbSize = sizeof(wc);
@@ -39,7 +39,7 @@ Window::WindowClass::~WindowClass()
 	UnregisterClass(wndCLassName, GetInstance());
 }
 
-Window::Window(int width, int height, const wchar_t * name) noexcept
+Window::Window(int width, int height, const TCHAR * name) noexcept
 {
 	RECT wr;
 	wr.left = 100;
