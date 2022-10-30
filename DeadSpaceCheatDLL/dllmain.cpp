@@ -7,7 +7,7 @@
 DWORD CALLBACK DeadSpaceHackThread(HMODULE hModule)
 {
 	//Create Window
-	Window wWnd = Window(500, 500, L"Dead Space Trainer Internal");
+	Window wWnd = Window(500, 500, TEXT("Dead Space Trainer Internal"));
 	MSG Msg = { 0 };
 	BOOL gResult;
 

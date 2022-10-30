@@ -3,8 +3,8 @@ class hackProcess
 {
 public:
 	//External Functions
-	static DWORD GetProcessId(const wchar_t *szProcessName);
-	static uintptr_t GetModuleBaseAddress(const wchar_t *szModuleName, DWORD dwProcessId);
+	static DWORD GetProcessId(const TCHAR *szProcessName);
+	static uintptr_t GetModuleBaseAddress(const TCHAR *szModuleName, DWORD dwProcessId);
 
 	static void PatchEx(HANDLE hProcess, BYTE *dst, BYTE *src, unsigned int size);
 	static void NopEx(HANDLE hProcess, BYTE *dst, unsigned int size);

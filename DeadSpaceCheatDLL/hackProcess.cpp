@@ -2,7 +2,7 @@
 #include "hackProcess.h"
 
 
-DWORD hackProcess::GetProcessId(const wchar_t * szProcessName)
+DWORD hackProcess::GetProcessId(const TCHAR * szProcessName)
 {
 	DWORD dwProcessId = 0;
 	HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
@@ -16,7 +16,7 @@ DWORD hackProcess::GetProcessId(const wchar_t * szProcessName)
 		{
 			do
 			{
-				if (!_wcsicmp(szProcessName, ProcessEntry.szExeFile))
+				if (!lstrcmp(szProcessName, ProcessEntry.szExeFile))
 				{
 					dwProcessId = ProcessEntry.th32ProcessID;
 					break;
@@ -30,7 +30,7 @@ DWORD hackProcess::GetProcessId(const wchar_t * szProcessName)
 	return dwProcessId;
 }
 
-uintptr_t hackProcess::GetModuleBaseAddress(const wchar_t * szModuleName, DWORD dwProcessId)
+uintptr_t hackProcess::GetModuleBaseAddress(const TCHAR * szModuleName, DWORD dwProcessId)
 {
 	uintptr_t uiModuleBaseAddress = 0;
 	HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, dwProcessId);
@@ -44,7 +44,7 @@ uintptr_t hackProcess::GetModuleBaseAddress(const wchar_t * szModuleName, DWORD 
 		{
 			do
 			{
-				if (!_wcsicmp(szModuleName, ModuleEntry.szModule))
+				if (!lstrcmp(szModuleName, ModuleEntry.szModule))
 				{
 					uiModuleBaseAddress = (uintptr_t)ModuleEntry.modBaseAddr;
 					break;
