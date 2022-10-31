@@ -2,38 +2,8 @@
 #include "DeadSpace.h"
 #include "hackProcess.h"
 #include "Offsets.h"
+#include "assembly.h"
 
-void __declspec(naked) ourFunc()
-{
-	__asm
-	{
-	newmem:
-		cmp dword ptr[edi+0x12C],0
-		je Entity
-
-	Player:
-		cmp DeadSpaceOffsets::dwGodmode,0
-		je code
-		push eax
-		mov eax,[edi+0x12C]
-		movd xmm0,eax
-		pop eax
-		jmp code
-
-	Entity:
-		cmp DeadSpaceOffsets::dwOneShotKill,0
-		je code
-		push eax
-		mov eax,0
-		movd xmm0,eax
-		pop eax
-		jmp code
-
-	code:
-		movss[edi+0x120],xmm0
-		jmp[DeadSpaceOffsets::HeathDecremenntJumpBackAddr]
-	}
-}
 
 VOID DeadSpace::CreateWindowGUI(HWND hWnd, HDC hdc) noexcept
 {
@@ -93,7 +63,7 @@ VOID DeadSpace::CreateWindowGUI(HWND hWnd, HDC hdc) noexcept
 
 
 	DeleteObject(hFont);
-	hackProcess::Hook((void *)(DeadSpaceOffsets::uiModuleBaseAddress + DeadSpaceOffsets::HealthDecrement), ourFunc, DeadSpaceOffsets::HealthDecSize);
+	hackProcess::Hook((void *)(DeadSpaceOffsets::uiModuleBaseAddress + DeadSpaceOffsets::HealthDecrement), HealthFunc, DeadSpaceOffsets::HealthDecSize);
 
 	//ReleaseDC(hWnd, hdc);
 	return VOID();
