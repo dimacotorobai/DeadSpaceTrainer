@@ -22,4 +22,4 @@ To use this application the user must either compile the project themselves or d
 My goal for this project was to apply my pre-requisite knowledge of operating systems in a fun and challenging way. I also wanted to learn more about the Windows API(Win32), Reverse Engineering, x86 Assembly, and GDI. I also used this as an opportunity to expand my knowledge of C++ programming and OOP.
  
 ## Help
-This project could not have been built without the excellent tutorials provided by GuidedHacking, as well as ChiliTomatoNoodle. The process of finding offsets, reverse engineering, and writing the code required for memory reading/writing was learned from GuidedHacking. While the prcoess of creating the User-Interface with Win32 was learned from ChiliTomatoNoodle.
+This project could not have been built without the excellent tutorials provided by GuidedHacking, as well as ChiliTomatoNoodle. The process of finding offsets, reverse engineering, and writing the code required for memory reading/writing was learned from GuidedHacking. While the process of creating the User-Interface with Win32 was learned from ChiliTomatoNoodle.
