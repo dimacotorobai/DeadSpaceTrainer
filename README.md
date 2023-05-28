@@ -1,13 +1,12 @@
 ## DeadSpace Trainer
-A trainer for the game Dead Space(2008). This is a basic internal DLL trainer for the game Dead Space which has the following functionality: infinite health, infinite ammo, infinite air, infinite stasis, infinite entity damage, and user-specified credit and node setter. This project was written in C++ using Visual Studio 2017 IDE.
+A trainer for the game Dead Space(2008). This is a basic internal DLL trainer for the game Dead Space which has the following functionality: infinite health, infinite ammo, infinite air, infinite stasis, infinite entity damage, and user-specified credit and node setter. This project was written in C++ using Visual Studio 2022 IDE and C++20 Language Standard.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/52585921/117048270-cbfded00-ace0-11eb-810f-f67574363109.jpg?raw=true" alt="DeadSpace Trainer Image"/>
+  <img src="https://github.com/dimacotorobai/DeadSpaceTrainer/assets/52585921/fb4a0a18-b35c-443e-8a85-1b775c87e356.png?raw=true" alt="DeadSpace Trainer Image"/>
 </p>
 
-
 ## Instructions
-To use this application the user must either compile the project themselves or download the DLL provided. The user must also use a DLL Injection application to inject the DLL mentioned into the Dead Space process. Below I have provided step by step instructions on one of the methods 
+To use this application the user must either compile the project themselves or download the DLL provided. The user must also use a DLL Injection application to inject the DLL mentioned into the Dead Space process. Below I have provided step by step instructions on one of the methods.
 
 ### Step By Step
   * Download Cheat Engine from https://www.cheatengine.org/downloads.php
